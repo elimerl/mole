@@ -3,6 +3,16 @@
 //! A stupid 3D model format that is literally a zstandard messagepack struct. Useful for ingest directly from a game or engine without 5000 dependencies and a 6 hour build. GLTF is too hard :(
 //! It is fully self contained, so textures are stored in the file. Hey, it's easy.
 //! Pardon the puns. (Note: Moletex = Vertex, Molehill = top level file format, Moledel = one model in the file, Moleterial = material)
+//!
+//! ## Usage
+//!
+//! ```no_run
+//! use mole::from_bytes;
+//! let file = std::fs::read("hello.mol").unwrap();
+//! let hill = mole::from_bytes(file);
+//! println!("{:?}", hill);
+//! std::fs::write("hello.mol", mole::to_bytes(&hill));
+//! ```
 use std::fmt::Debug;
 
 use glam::{Vec2, Vec3, Vec4};
