@@ -92,3 +92,15 @@ pub struct Moletex {
     pub tex_coord: Vec2,
     pub normal: Vec3,
 }
+
+pub fn from_bytes(bytes: Vec<u8>) -> Option<Molehill> {
+    zstd::decode_all(std::io::Cursor::new(bytes))
+        .ok()
+        .and_then(|v| rmp_serde::from_slice(&v).ok())
+}
+
+pub fn to_bytes(hill: &Molehill) -> Option<Vec<u8>> {
+    rmp_serde::to_vec(hill)
+        .ok()
+        .and_then(|v| zstd::encode_all(std::io::Cursor::new(v), 22).ok())
+}

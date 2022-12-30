@@ -4,6 +4,7 @@ version = "0.1.0"
 edition = "2021"
 keywords = ["gamedev", "3d", "format"]
 categories = ["game-development", "rendering::data-formats"]
+description = "A custom 3D model format for games."
 readme = "README.md"
 repository = "https://github.com/elimerl/mole"
 license = "Unlicense"
@@ -13,5 +14,6 @@ license = "Unlicense"
 glam = { version = "0.22.0", features = ["serde"] }
 image = "0.24.5"
 rmp = "0.8.11"
+rmp-serde = "1.1.1"
 serde = { version = "1.0.152", features = ["derive"] }
 zstd = "0.12.1"
