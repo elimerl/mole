@@ -1,0 +1,17 @@
+[package]
+name = "mole"
+version = "0.1.0"
+edition = "2021"
+keywords = ["gamedev", "3d", "format"]
+categories = ["game-development", "rendering::data-formats"]
+readme = "README.md"
+repository = "https://github.com/elimerl/mole"
+license = "Unlicense"
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+glam = { version = "0.22.0", features = ["serde"] }
+image = "0.24.5"
+rmp = "0.8.11"
+serde = { version = "1.0.152", features = ["derive"] }
+zstd = "0.12.1"
